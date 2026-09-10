@@ -49,3 +49,32 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# ============================================
+# Artefatos locais dos exercicios (Gustavo)
+# ============================================
+
+# Objetos e binarios que eu compilo
+*.o
+prog
+teste
+ola
+
+# ...exceto os do gabarito, que o professor versiona
+!**/Gabarito-obj/*.o
+!**/Gabarito-obj/prog
+
+# Saida gerada pelo correcao.sh
+Resultados/
+Resultado.csv
+log.txt
+saida.json
+saida_minha.txt
+
+# Backups e temporarios
+*.bak
+*~
+
+# Se um dia quiser parar de versionar as configs do VS Code,
+# descomente a linha abaixo:
+# .vscode/

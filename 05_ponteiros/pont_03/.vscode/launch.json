@@ -1,0 +1,98 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (sem entrada)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/prog",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Formatacao amigavel no gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-debug"
+        },
+        {
+            "name": "Debug (Caso 1)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/prog",
+            "args": [
+                "<",
+                "${workspaceFolder}/Casos/1/entrada.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Formatacao amigavel no gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-debug"
+        },
+        {
+            "name": "Debug (Caso 2)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/prog",
+            "args": [
+                "<",
+                "${workspaceFolder}/Casos/2/entrada.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Formatacao amigavel no gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-debug"
+        },
+        {
+            "name": "Debug (Caso 3)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/prog",
+            "args": [
+                "<",
+                "${workspaceFolder}/Casos/3/entrada.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Formatacao amigavel no gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-debug"
+        }
+    ]
+}
