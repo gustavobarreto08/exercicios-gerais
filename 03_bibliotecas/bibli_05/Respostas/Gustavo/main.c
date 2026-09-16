@@ -1,6 +1,7 @@
 #include "string_utils.h"
 #include <stdio.h>
 
+//Está faltando o .o do professor
 int main(){
     int escolha = 0, i=0;
     char string[100];
