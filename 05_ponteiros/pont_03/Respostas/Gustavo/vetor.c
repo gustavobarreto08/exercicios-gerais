@@ -44,18 +44,8 @@ void ImprimeDadosDoVetor(int * n, int tam){
  */
 void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar){
     int menor;
-    for(int i = 0; i<tam; i++){
-        if(i==0){
-            menor = *vet;
-            continue;
-        }
-        if(*vet<menor){
-            menor = *vet;
-        }
-        vet++;
-    }
-    if(menor<*paraTrocar){
-        *paraTrocar = menor;
+    for(int i = 0; i<tam-1; i++){
+        
     }
 }
 
@@ -67,4 +57,9 @@ void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar){
  * @param vet Ponteiro para o vetor a ser ordenado.
  * @param tam Tamanho do vetor.
  */
-void OrdeneCrescente(int * vet, int tam);
+void OrdeneCrescente(int * vet, int tam){
+    int *paraTrocar;
+    for(int i = 0; i<tam; i++){
+        TrocaSeAcharMenor(vet,tam,paraTrocar);
+    }
+}
