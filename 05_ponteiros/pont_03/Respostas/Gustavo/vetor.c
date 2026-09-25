@@ -1,5 +1,5 @@
 #include "vetor.h"
-
+#include <stdio.h>
 /**
  * @brief Lê dados do usuário e armazena em um vetor.
  * 
@@ -25,9 +25,10 @@ void LeDadosParaVetor(int * vet, int tam){
  */
 void ImprimeDadosDoVetor(int * n, int tam){
     for(int i = 0; i<tam; i++){
-        printf("%d",*n);
+        printf("%d ",*n);
         n++;
     }
+    printf("\n");
 }
 
 /**
@@ -43,9 +44,18 @@ void ImprimeDadosDoVetor(int * n, int tam){
  * @param paraTrocar Ponteiro para a variável que armazenará o índice do menor valor encontrado.
  */
 void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar){
-    int menor;
-    for(int i = 0; i<tam-1; i++){
-        
+    int *menor = vet;
+    int aux;
+    for(int i = 0; i<tam; i++){
+        if(*vet<*menor){
+            menor = vet;
+        }
+        vet++;
+    }
+    if(*menor<*paraTrocar){
+        aux = *paraTrocar;
+        *paraTrocar = *menor;
+        *menor = aux;
     }
 }
 
@@ -58,8 +68,10 @@ void TrocaSeAcharMenor(int * vet, int tam, int * paraTrocar){
  * @param tam Tamanho do vetor.
  */
 void OrdeneCrescente(int * vet, int tam){
-    int *paraTrocar;
-    for(int i = 0; i<tam; i++){
-        TrocaSeAcharMenor(vet,tam,paraTrocar);
+    int *paraTrocar = NULL;
+    for(int i = 0;i<tam; i++){
+        paraTrocar = vet;
+        TrocaSeAcharMenor(vet,tam-i,paraTrocar);
+        vet++;
     }
 }
