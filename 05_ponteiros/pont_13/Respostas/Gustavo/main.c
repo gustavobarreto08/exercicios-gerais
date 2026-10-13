@@ -1,24 +1,19 @@
 #include "rolagem.h"
+#include <stdio.h>
 
-void PrintaTudo(char mensagemprintada){
-    printf("%s",mensagemprintada);
-    printf("\n");
-    printf("\033[H\033[J");
+void LeMensagem(char mensagem[NUM_MAX_MSGS][TAM_MAX_MSG], int numMsg){
+    for(int i = 1; i<=numMsg; i++){
+        scanf("%[^\n]",mensagem[i]);
+        scanf("\n");
+    }
 }
 
 int main(){
     char mensagens[NUM_MAX_MSGS][TAM_MAX_MSG];
-    char mensagemprintada[30];
+    char mensagemprintada[31];
     int qtdrolagens, nummensagens;
     scanf("%d",&qtdrolagens);
     scanf("%d",&nummensagens);
-    scanf("\n");
-    for(int i = 1; i<=nummensagens; i++){
-        scanf("%[^\n]",mensagens[i]);
-        scanf("\n");
-    }
-    for(int i = 0; i<qtdrolagens; i++){
-        
-    }
+    RolaMsg(&LeMensagem,30,qtdrolagens);
     return 0;
 }
