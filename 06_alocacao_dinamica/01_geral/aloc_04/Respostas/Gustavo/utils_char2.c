@@ -11,13 +11,13 @@
  */
 char *CriaVetorTamPadrao(){
     char *vetor = NULL;
-    vetor = malloc(TAM_PADRAO*sizeof(char));
+    vetor = malloc((TAM_PADRAO+1)*sizeof(char));
     if(vetor==NULL){
         printf("ERRO");
         exit(1);
     }
-    for(int i = 0;i<TAM_PADRAO;i++){
-        if(i==TAM_PADRAO-1){
+    for(int i = 0;i<=TAM_PADRAO;i++){
+        if(i==TAM_PADRAO){
             vetor[i] = '\0';
             break;
         }
@@ -35,9 +35,15 @@ char *CriaVetorTamPadrao(){
  * @return Ponteiro para o novo vetor.
  */
 char *AumentaTamanhoVetor(char* vetor, int tamanhoantigo){
-    realloc(vetor,2*TAM_PADRAO*sizeof(char));
-    for(int i = 0;i<2*TAM_PADRAO;i++){
-        if(i==2*TAM_PADRAO-1){
+    char *temp = NULL;
+    temp = realloc(vetor,(tamanhoantigo+TAM_PADRAO+1)*sizeof(char));
+    if(temp==NULL){
+        printf("erro");
+        exit(1);
+    }
+    vetor = temp;
+    for(int i = tamanhoantigo;i<(tamanhoantigo+TAM_PADRAO)+1;i++){
+        if(i==(tamanhoantigo+TAM_PADRAO)){
             vetor[i] = '\0';
             break;
         }
@@ -60,7 +66,7 @@ char* LeVetor(char *vetor, int *tamanho){
     for(int i = 0;; i++){
         if(i>=*tamanho){
             vetor = AumentaTamanhoVetor(vetor,*tamanho);
-            *tamanho = 2*(*tamanho);
+            *tamanho = (*tamanho)+TAM_PADRAO;
         }
         scanf("%c",&c);
         if(c!='\n'){
@@ -78,12 +84,7 @@ char* LeVetor(char *vetor, int *tamanho){
  * @param vetor Ponteiro para o vetor a ser imprimido.
 */
 void ImprimeString(char *vetor){
-    for(int i = 0;;i++){
-        if(vetor[i]=='\0'){
-            break;
-        }
-        printf("%c",vetor[i]);
-    }
+    printf("%s\n",vetor);
 }
 
 /**

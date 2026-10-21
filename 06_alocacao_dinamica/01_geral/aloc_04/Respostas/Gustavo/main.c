@@ -7,7 +7,7 @@ int main(){
     int tam = TAM_PADRAO;
     tamanho = &tam;
     vetor = CriaVetorTamPadrao();
-    LeVetor(vetor,tamanho);
+    vetor = LeVetor(vetor,tamanho);
     ImprimeString(vetor);
     LiberaVetor(vetor);
     return 0;
