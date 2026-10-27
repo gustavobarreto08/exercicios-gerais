@@ -28,7 +28,7 @@ void ApagaEleitor(tEleitor* eleitor){
  * @param eleitor Ponteiro para o eleitor que terá seus dados armazenados.
  */
 void LeEleitor(tEleitor *eleitor){
-    scanf("%d %d %d",&eleitor->id,&eleitor->votoG,&eleitor->votoP);
+    scanf("%d %d %d",&eleitor->id,&eleitor->votoP,&eleitor->votoG);
 }
 
 /**

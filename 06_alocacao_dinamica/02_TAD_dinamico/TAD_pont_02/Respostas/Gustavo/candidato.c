@@ -36,12 +36,15 @@ void ApagaCandidato(tCandidato* candidato){
  * @param candidato Candidato a ser lido.
  */
 void LeCandidato(tCandidato *candidato){
+    candidato->nome = malloc(100*sizeof*(candidato->nome));
+    candidato->partido = malloc(100*sizeof*(candidato->partido));
     scanf(" %[^,]",candidato->nome);
     scanf(",");
     scanf(" %[^,]",candidato->partido);
     scanf(",");
     scanf(" %c,", &candidato->cargo);
     scanf("%d", &candidato->id);
+    candidato->votos = 0;
 }
 
 /**
@@ -85,7 +88,6 @@ char ObtemCargo(tCandidato* candidato){
  */
 void IncrementaVotoCandidato(tCandidato* candidato){
     candidato->votos++;
-    return candidato->votos;
 }
 
 /**
